@@ -1,0 +1,139 @@
+HTML, BODY {
+  height: 100%;
+  overflow: hidden;
+}
+
+BODY {
+  background: #0a0a0a;
+  background-image: linear-gradient(#0f0f0f 1px, transparent 1px), linear-gradient(to right, #0f0f0f 1px, transparent 1px);
+  background-size: 3.3333333333vmin 3.3333333333vmin;
+}
+
+.range {
+  /* display: none; */
+  position: absolute;
+  zind: 2px;
+}
+
+.wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  width: 10vmin;
+  height: 10vmin;
+  font-size: 10vmin;
+  transform: rotateX(-45deg);
+  transform-style: preserve-3d;
+}
+
+.flower {
+  width: 10vmin;
+  height: 10vmin;
+  -webkit-animation: rotate-flower 10s linear infinite;
+          animation: rotate-flower 10s linear infinite;
+  transform-style: preserve-3d;
+}
+.flower:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 95%;
+  height: 95%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  background: #226600;
+  border-radius: 50%;
+  transform: rotateX(90deg);
+  -webkit-animation: rotate-hue 5s infinite;
+          animation: rotate-hue 5s infinite;
+}
+
+.petal {
+  position: absolute;
+  z-index: 20;
+  bottom: 80%;
+  left: -10vmin;
+  transform-style: preserve-3d;
+  transform-origin: bottom;
+}
+
+.box {
+  width: 30vmin;
+  transform-style: preserve-3d;
+  transform-origin: bottom;
+  -webkit-animation: rotate-box 12s infinite;
+          animation: rotate-box 12s infinite;
+}
+
+.shape {
+  width: 0.5em;
+  height: 0.5em;
+  margin: auto;
+  background: currentColor;
+  box-shadow: 0.5em 0 0 0, 1em 0 0 0, -1em 0 0 0, -0.5em 0 0 0;
+  border-radius: 50%;
+  -webkit-animation: rotate-hue 5s infinite;
+          animation: rotate-hue 5s infinite;
+}
+
+@-webkit-keyframes rotate-box {
+  0% {
+    transform: rotateX(3.5deg);
+  }
+  15% {
+    transform: rotateX(3.5deg);
+  }
+  50% {
+    transform: rotateX(-7deg);
+  }
+  80% {
+    transform: rotateX(-7deg);
+  }
+  100% {
+    transform: rotateX(3.5deg);
+  }
+}
+
+@keyframes rotate-box {
+  0% {
+    transform: rotateX(3.5deg);
+  }
+  15% {
+    transform: rotateX(3.5deg);
+  }
+  50% {
+    transform: rotateX(-7deg);
+  }
+  80% {
+    transform: rotateX(-7deg);
+  }
+  100% {
+    transform: rotateX(3.5deg);
+  }
+}
+@-webkit-keyframes rotate-flower {
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+@keyframes rotate-flower {
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+@-webkit-keyframes rotate-hue {
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+@keyframes rotate-hue {
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
